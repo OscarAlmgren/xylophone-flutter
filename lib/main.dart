@@ -9,7 +9,8 @@ class XylophoneApp extends StatelessWidget {
     player.play('note$index.wav');
   }
 
-  Expanded buildKeynote(Color inputColor, int keyIndex) => Expanded(
+  Expanded buildKeynote({@required Color inputColor, @required int keyIndex}) =>
+      Expanded(
         flex: 1,
         child: FlatButton(
           color: inputColor,
@@ -28,13 +29,13 @@ class XylophoneApp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              buildKeynote(Colors.red, 1),
-              buildKeynote(Colors.orange, 2),
-              buildKeynote(Colors.yellow, 3),
-              buildKeynote(Colors.green, 4),
-              buildKeynote(Colors.teal, 5),
-              buildKeynote(Colors.blue, 6),
-              buildKeynote(Colors.purple, 7),
+              buildKeynote(inputColor: Colors.red, keyIndex: 1),
+              buildKeynote(inputColor: Colors.orange, keyIndex: 2),
+              buildKeynote(inputColor: Colors.yellow, keyIndex: 3),
+              buildKeynote(inputColor: Colors.green, keyIndex: 4),
+              buildKeynote(inputColor: Colors.teal, keyIndex: 5),
+              buildKeynote(inputColor: Colors.blue, keyIndex: 6),
+              buildKeynote(inputColor: Colors.purple, keyIndex: 7),
             ],
           ),
         ),
