@@ -9,6 +9,15 @@ class XylophoneApp extends StatelessWidget {
     player.play('note$index.wav');
   }
 
+  Expanded buildKeynote(Color inputColor, int keyIndex) => Expanded(
+        flex: 1,
+        child: FlatButton(
+          color: inputColor,
+          onPressed: () => playSound(keyIndex),
+          child: null,
+        ),
+      );
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,69 +28,13 @@ class XylophoneApp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Expanded(
-                flex: 1,
-                child: FlatButton(
-                  color: Colors.red,
-                  onPressed: () {
-                    playSound(1);
-                  },
-                ),
-              ),
-              Expanded(
-                flex: 1,
-                child: FlatButton(
-                  color: Colors.orange,
-                  onPressed: () {
-                    playSound(2);
-                  },
-                ),
-              ),
-              Expanded(
-                flex: 1,
-                child: FlatButton(
-                  color: Colors.yellow,
-                  onPressed: () {
-                    playSound(3);
-                  },
-                ),
-              ),
-              Expanded(
-                flex: 1,
-                child: FlatButton(
-                  color: Colors.green,
-                  onPressed: () {
-                    playSound(4);
-                  },
-                ),
-              ),
-              Expanded(
-                flex: 1,
-                child: FlatButton(
-                  color: Colors.teal,
-                  onPressed: () {
-                    playSound(5);
-                  },
-                ),
-              ),
-              Expanded(
-                flex: 1,
-                child: FlatButton(
-                  color: Colors.blue,
-                  onPressed: () {
-                    playSound(6);
-                  },
-                ),
-              ),
-              Expanded(
-                flex: 1,
-                child: FlatButton(
-                  color: Colors.purple,
-                  onPressed: () {
-                    playSound(7);
-                  },
-                ),
-              ),
+              buildKeynote(Colors.red, 1),
+              buildKeynote(Colors.orange, 2),
+              buildKeynote(Colors.yellow, 3),
+              buildKeynote(Colors.green, 4),
+              buildKeynote(Colors.teal, 5),
+              buildKeynote(Colors.blue, 6),
+              buildKeynote(Colors.purple, 7),
             ],
           ),
         ),
